@@ -7,9 +7,9 @@ def compile_source(source):
     if not os.path.exists("target"):
         os.makedirs("target")
 
-    open("target/tmp_kp_shader.comp", "w").write(source)
-    os.system("glslangValidator -V target/tmp_kp_shader.comp -o target/tmp_kp_shader.comp.spv")
-    return open("target/tmp_kp_shader.comp.spv", "rb").read()
+    open("build/tmp_kp_shader.comp", "w").write(source)
+    os.system("glslangValidator -V build/tmp_kp_shader.comp -o build/tmp_kp_shader.comp.spv")
+    return open("build/tmp_kp_shader.comp.spv", "rb").read()
 
 
 def main():
