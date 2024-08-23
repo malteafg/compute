@@ -4,8 +4,8 @@ import numpy as np
 import os
 
 def compile_source(source):
-    if not os.path.exists("target"):
-        os.makedirs("target")
+    if not os.path.exists("build"):
+        os.makedirs("build")
 
     open("build/tmp_kp_shader.comp", "w").write(source)
     os.system("glslangValidator -V build/tmp_kp_shader.comp -o build/tmp_kp_shader.comp.spv")

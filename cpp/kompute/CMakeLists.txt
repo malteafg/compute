@@ -1,9 +1,9 @@
 cmake_minimum_required(VERSION 3.11.0)
-project(kompute_array_mult VERSION 0.1.0)
+project(cpp_kompute_examples VERSION 0.1.0)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_subdirectory(../../../../../libs/kompute-0.9.0/ ${CMAKE_CURRENT_BINARY_DIR}/kompute_build)
+add_subdirectory(../../../../libs/kompute-0.9.0/ ${CMAKE_CURRENT_BINARY_DIR}/kompute_build)
 
 # option(KOMPUTE_OPT_GIT_TAG "The tag of the repo to use for the example" v0.9.0)
 # include(FetchContent)
@@ -11,5 +11,7 @@ add_subdirectory(../../../../../libs/kompute-0.9.0/ ${CMAKE_CURRENT_BINARY_DIR}/
 # FetchContent_MakeAvailable(kompute)
 # include_directories(${kompute_SOURCE_DIR}/src/include)
 
-add_executable(kompute_array_mult src/main.cpp)
-target_link_libraries(kompute_array_mult PRIVATE kompute::kompute)
+
+add_executable(basic basic/main.cpp)
+
+target_link_libraries(basic PRIVATE kompute::kompute)
