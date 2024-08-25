@@ -1,0 +1,16 @@
+[workspace]
+members = [
+"basic",
+]
+
+resolver="2"
+
+[workspace.dependencies]
+wgpu = "22.1"
+
+env_logger = "0.11"
+log = "0.4"
+
+pollster = "0.3"
+bytemuck = "1.17"
+flume = "0.11"
