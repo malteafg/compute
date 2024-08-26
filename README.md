@@ -9,6 +9,8 @@ examples written in various programming languages using several different GPU AP
     * CUDA
 * C++
     * Kompute
+* Rust
+    * wgpu
 
 ## Structure
 There is a folder for each programming language. Inside each programming language folder, there is a
