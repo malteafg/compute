@@ -1,8 +1,12 @@
-.PHONY: basic build
+.PHONY: basic info build
 
-basic: build
-	make build
+basic:
+	@make build
 	./build/basic
+
+info:
+	@make build
+	./build/info
 
 build:
 	cmake -B build/ -S .

@@ -14,3 +14,6 @@ add_subdirectory(../../../../libs/kompute-0.9.0/ ${CMAKE_CURRENT_BINARY_DIR}/kom
 
 add_executable(basic basic/basic.cpp)
 target_link_libraries(basic PRIVATE kompute::kompute)
+
+add_executable(info info/info.cpp)
+target_link_libraries(info PRIVATE kompute::kompute)
