@@ -1,7 +1,7 @@
 [workspace]
 members = [
 "basic",
-"test",
+"info",
 ]
 
 resolver="2"

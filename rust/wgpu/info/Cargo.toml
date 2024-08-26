@@ -1,14 +1,12 @@
 [package]
-name = "basic"
+name = "info"
 version = "0.1.0"
 edition = "2021"
 
 [[bin]]
-name="basic"
-path="basic.rs"
+name="info"
+path="info.rs"
 
 [dependencies]
 wgpu = { workspace = true }
 pollster = { workspace = true }
-bytemuck = { workspace = true }
-flume = { workspace = true }
