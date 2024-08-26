@@ -11,6 +11,8 @@ This folder contains examples of using the Kompute library in C++ to execute cod
   * The examples are currently setup to compile Kompute from source. Look in the CMakeLists.txt file
     to see the expected path of the Kompute repository. Optionally, change the CMakeLists.txt file
     to fit with however you install Kompute.
+* The compute shader is compiled to SPIR-V using ```glslangValidator```. Make sure it is installed
+  on your pc.
 
 ## Running examples
 * Use ```make <example>``` to run the given example.

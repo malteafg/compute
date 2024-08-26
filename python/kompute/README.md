@@ -5,6 +5,8 @@ This folder contains examples of using the Kompute library in python to execute 
 * Create a python venv using ```python -m venv .venv```
 * Activate the venv using ```source .venv/bin/activate```
 * Install the dependencies using ```pip install -r requirements.txt```
+* The compute shader is compiled to SPIR-V using ```glslangValidator```. Make sure it is installed
+  on your pc.
 
 ## Running examples
 * Use ```make <example>``` to run the given example.

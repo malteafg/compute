@@ -1,7 +1,7 @@
 .PHONY: basic
 
 basic:
-	@python basic/main.py
+	@python basic/basic.py
 
 clean:
 	@rm -rf build/
