@@ -3,10 +3,14 @@ name = "basic"
 version = "0.1.0"
 edition = "2021"
 
+[[bin]]
+name="basic"
+path="basic.rs"
+
 [dependencies]
 wgpu = { workspace = true }
-env_logger = { workspace = true }
-log = { workspace = true }
+# env_logger = { workspace = true }
+# log = { workspace = true }
 pollster = { workspace = true }
 bytemuck = { workspace = true }
 flume = { workspace = true }

@@ -4,7 +4,6 @@ use wgpu::util::DeviceExt;
 // Indicates a u32 overflow in an intermediate Collatz value
 const OVERFLOW: u32 = 0xffffffff;
 
-#[cfg_attr(test, allow(dead_code))]
 async fn run() {
     let numbers = if std::env::args().len() <= 2 {
         let default = vec![1, 2, 3, 4];
@@ -28,11 +27,8 @@ async fn run() {
         .collect();
 
     println!("Steps: [{}]", disp_steps.join(", "));
-    #[cfg(target_arch = "wasm32")]
-    log::info!("Steps: [{}]", disp_steps.join(", "));
 }
 
-#[cfg_attr(test, allow(dead_code))]
 async fn execute_gpu(numbers: &[u32]) -> Option<Vec<u32>> {
     // Instantiates instance of WebGPU
     let instance = wgpu::Instance::default();
@@ -68,7 +64,7 @@ async fn execute_gpu_inner(
     // Loads the shader from WGSL
     let cs_module = device.create_shader_module(wgpu::ShaderModuleDescriptor {
         label: None,
-        source: wgpu::ShaderSource::Wgsl(Cow::Borrowed(include_str!("shader.wgsl"))),
+        source: wgpu::ShaderSource::Wgsl(Cow::Borrowed(include_str!("basic.wgsl"))),
     });
 
     // Gets the size in bytes of the buffer.
@@ -181,15 +177,5 @@ async fn execute_gpu_inner(
 }
 
 pub fn main() {
-    #[cfg(not(target_arch = "wasm32"))]
-    {
-        env_logger::init();
-        pollster::block_on(run());
-    }
-    #[cfg(target_arch = "wasm32")]
-    {
-        std::panic::set_hook(Box::new(console_error_panic_hook::hook));
-        console_log::init().expect("could not initialize logger");
-        wasm_bindgen_futures::spawn_local(run());
-    }
+    pollster::block_on(run());
 }

@@ -1,4 +1,4 @@
-.PHONY: basic test build
+.PHONY: basic build
 
 basic: build
 	make build
